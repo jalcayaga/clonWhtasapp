@@ -2,22 +2,16 @@ import { supabase } from "../supabaseClient";
 
 const Login = () => {
   const handleLogin = async () => {
-
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
+      provider: "google",
     });
-    console.log(data)
-  };
-
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    window.location.reload()
+    console.log(error, data);
   };
 
   return (
     <section className="login">
       <button onClick={handleLogin}>Iniciar</button>
-      <button onClick={handleLogout}>Cerrrar</button>
+      {/* <button onClick={handleLogout}>Cerrar</button> */}
     </section>
   );
 };

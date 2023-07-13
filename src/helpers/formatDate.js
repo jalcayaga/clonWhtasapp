@@ -10,8 +10,6 @@ export const formatDate = (messageDate) => {
     day: "numeric",
   };
   const newDate = date.toLocaleDateString("en-US", option);
- /*  console.log(newDate); */
-  return newDate +" - "+ time;
-
-  
+  /*  console.log(newDate); */
+  return newDate + " - " + time;
 };

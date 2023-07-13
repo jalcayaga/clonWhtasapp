@@ -5,11 +5,10 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 
 function App() {
-
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState(null);
 
   const getSession = async () => {
-    const {data} = await supabase.auth.getSession();
+    const { data } = await supabase.auth.getSession();
     setSession(data.session);
   };
 
@@ -17,12 +16,10 @@ function App() {
     getSession();
   }, []);
 
-
   return (
     <div className="App">
       <h1>Whatsapp Clone</h1>
-      {session ? <Messages /> : <Login /> }
-      
+      {session ? <Messages /> : <Login />}
     </div>
   );
 }
